@@ -1,4 +1,4 @@
-(defproject de.sveri/closp-crud "0.1.5-SNAPSHOT"
+(defproject de.sveri/closp-crud "0.1.5"
   :description "CRUD plugin for closp: https://github.com/sveri/closp"
   :url "https://github.com/sveri/closp-crud"
   :license {:name "Eclipse Public License"
