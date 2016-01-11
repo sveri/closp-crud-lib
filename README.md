@@ -37,7 +37,7 @@ You need a table definition in a file somewhere. It may look like this:
                
 Then run
 
-    $ lein closp-crud -f closp-definitions/person.edn
+    $ lein run -m de.sveri.clospcrud.closp-crud/closp-crud -f closp-definitions/person.edn
     
 This will generate several files:
 
@@ -58,15 +58,16 @@ but expects a certain structure, some dependencies and existing functions to cal
 
 Put `[closp-crud "0.1.0"]` into the `:plugins` vector of your `project.clj` file.
 
-Then add the configuration to your `project.clj` file like this (see below for explanation of options):
+Then add the configuration to your `closp-crud.edn` file, which is expected to reside on the classpath,
+ like this (see below for explanation of options):
 
-    :closp-crud {:jdbc-url "jdbc:h2:mem:test_mem"
-                 :migrations-output-path "./migrations"
-                 :clj-src "src/clj"
-                 :ns-db "de.sveri.siwf.db"
-                 :ns-routes "de.sveri.siwf.routes"
-                 :ns-layout "de.sveri.siwf.layout"
-                 :templates "resources/templates"}
+    {:jdbc-url "jdbc:h2:mem:test_mem"
+    :migrations-output-path "./migrations"
+     :clj-src "src/clj"
+     :ns-db "de.sveri.siwf.db"
+     :ns-routes "de.sveri.siwf.routes"
+     :ns-layout "de.sveri.siwf.layout"
+     :templates "resources/templates"}
 
 Next you need a table definition in a file somewhere. It may look like this:
 
