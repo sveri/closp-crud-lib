@@ -228,6 +228,10 @@ Long version is the SQL standards and this SO post:
 
 ## Changes
 
+### 0.1.5 
+
+* convert to library instead of leiningen plugin
+
 ### 0.1.4
 
 * Fix a bug where column names with underscores broke boolean html field generation

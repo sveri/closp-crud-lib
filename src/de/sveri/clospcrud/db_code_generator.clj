@@ -23,7 +23,7 @@
 (ann ^:no-check render-db-file [String pt/entity-description -> String])
 (defn render-db-file [ns dataset]
   (let [templ-map (dataset->template-map ns dataset)]
-    (selm/render-file "templates/db.tmpl" templ-map {:tag-open \[ :tag-close \]})))
+    (selm/render-file "cc_templates/db.tmpl" templ-map {:tag-open \[ :tag-close \]})))
 
 (ann store-dataset [String pt/entity-description String -> nil])
 (defn store-dataset [ns dataset src-path]

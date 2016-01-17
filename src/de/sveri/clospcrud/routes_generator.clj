@@ -20,7 +20,7 @@
 (t/ann store-route [String String String pt/entity-description -> nil])
 (defn store-route [ns-routes ns-db ns-layout dataset src-path]
   (->>
-    (selm/render-file "templates/routes.tmpl"
+    (selm/render-file "cc_templates/routes.tmpl"
                       {:ns                (str ns-routes "." (:name dataset))
                        :ns-db             (str ns-db "." (:name dataset))
                        :ns-layout         ns-layout

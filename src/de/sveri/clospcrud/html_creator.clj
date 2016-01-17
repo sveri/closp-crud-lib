@@ -65,7 +65,7 @@
                            hicc->html
                            (insert-extra-tags entity-name))
                       (:columns cleaned-dataset))]
-    (selm/render-file "templates/create.html" {:entityname  entity-name
+    (selm/render-file "cc_templates/create.html" {:entityname  entity-name
                                                :form-groups (s/join line-sep form-groups)}
                       {:tag-open \[ :tag-close \]})))
 
@@ -77,7 +77,7 @@
 ; delete
 (t/ann delete-html [pt/entity-description -> String])
 (defn delete-html [dataset]
-  (selm/render-file "templates/delete.html" {:entityname (:name dataset)} {:tag-open \[ :tag-close \]}))
+  (selm/render-file "cc_templates/delete.html" {:entityname (:name dataset)} {:tag-open \[ :tag-close \]}))
 
 (t/ann store-delete-template [pt/entity-description String -> nil])
 (defn store-delete-template [dataset templ-path]
@@ -100,7 +100,7 @@
 
 (t/ann index-html [pt/entity-description -> String])
 (defn index-html [dataset]
-  (selm/render-file "templates/index.html" {:entityname (:name dataset)
+  (selm/render-file "cc_templates/index.html" {:entityname (:name dataset)
                                             :tds (create-tds-for-index dataset)}
                     {:tag-open \[ :tag-close \]}))
 
@@ -115,4 +115,4 @@
   (store-create-template dataset templ-path)
   (store-delete-template dataset templ-path)
   (store-index-template dataset templ-path)
-  (println "Generated HTML templates."))
+  (println "Generated HTML cc_templates."))
